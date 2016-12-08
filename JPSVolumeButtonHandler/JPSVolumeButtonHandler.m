@@ -35,7 +35,8 @@ static CGFloat minVolume                    = 0.00001f;
     self = [super init];
     if (self) {
         _appIsActive = YES;
-        _volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(MAXFLOAT, MAXFLOAT, 0, 0)];
+        _volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-999, -999, 100, 100)];
+		[_volumeView sizeToFit];
         [[UIApplication sharedApplication].windows.firstObject addSubview:_volumeView];
         _volumeView.hidden = YES;
     }
